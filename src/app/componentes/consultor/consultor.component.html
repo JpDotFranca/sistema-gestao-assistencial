@@ -1,3 +1,68 @@
-<div>
-    teste
+<div class="container">
+    <h1 class="well">Cadastro do associado</h1>
+    <div class="col-lg-12 well">
+        <div class="row">
+            <form form [formGroup]="formulario" (ngSubmit)="cadastrarConsultor()">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-12 form-group">
+                            <label>Nome ou Razão Social</label>
+                            <input type="text" placeholder="Nome ou Razão Social" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label>Número do documento</label>
+                            <input type="text" placeholder="Número do documento" class="form-control" mask="000.000.000-00||00.000.000/0000-00">
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Tipo</label>
+                            <select class="form-control">
+                                <option *ngFor="let tipoConsultor of tiposConsultor | enumParaOptions"
+                                    [value]="tipoConsultor.id">
+                                    {{tipoConsultor.descricao}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4 form-group">
+                            <label>City</label>
+                            <input type="text" placeholder="Enter City Name Here.." class="form-control">
+                        </div>
+                        <div class="col-sm-4 form-group">
+                            <label>State</label>
+                            <input type="text" placeholder="Enter State Name Here.." class="form-control">
+                        </div>
+                        <div class="col-sm-4 form-group">
+                            <label>Zip</label>
+                            <input type="text" placeholder="Enter Zip Code Here.." class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label>Title</label>
+                            <input type="text" placeholder="Enter Designation Here.." class="form-control">
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Company</label>
+                            <input type="text" placeholder="Enter Company Name Here.." class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="text" placeholder="Enter Phone Number Here.." class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="text" placeholder="Enter Email Address Here.." class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Website</label>
+                        <input type="text" placeholder="Enter Website Name Here.." class="form-control">
+                    </div>
+                    <button type="button" class="btn btn-lg btn-info">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
